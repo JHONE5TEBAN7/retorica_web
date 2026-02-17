@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actividad de Retórica</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contenedor {
+            background: white;
+            width: 60%;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .frase {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-argumento {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-argumento:hover {
+            background-color: #45a049;
+        }
+
+        .btn-falacia {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn-falacia:hover {
+            background-color: #da190b;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .correcto {
+            color: #2e7d32;
+        }
+
+        .incorrecto {
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h1>Actividad de Retórica</h1>
+
+    <div class="info">
+        Pregunta {{ numero }} de {{ total }} |
+        Puntaje: {{ puntaje }}
+    </div>
+
+    <div class="frase">
+        {{ frase }}
+    </div>
+
+    <form method="POST">
+        <button class="btn-argumento" type="submit" name="respuesta" value="argumento">
+            Argumento
+        </button>
+
+        <button class="btn-falacia" type="submit" name="respuesta" value="falacia">
+            Falacia
+        </button>
+    </form>
+
+    <div class="resultado {{ estado }}">
+        {{ resultado }}
+    </div>
+
+</div>
+
+</body>
+</html>
+
